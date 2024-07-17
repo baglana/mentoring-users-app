@@ -1,16 +1,16 @@
 import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MaterialType } from '@users/materials/data-access';
 import { MaterialsValidators } from '../materials-validators';
+import { NgIf, NgSwitch, NgSwitchCase } from '@angular/common';
 
 @Component({
   selector: 'users-materials-add-dialog',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatDialogModule, MatInputModule, MatButtonModule, NgSwitch, NgSwitchCase, NgIf],
   templateUrl: './materials-add-dialog.component.html',
   styleUrls: ['./materials-add-dialog.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,

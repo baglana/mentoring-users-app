@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgSwitch, NgSwitchCase } from '@angular/common';
 import { FoldersListComponent } from '../folders-list/folders-list.component';
 import { Folder, MaterialsFacade } from '@users/materials/data-access';
 import { LetDirective } from '@ngrx/component';
@@ -10,7 +10,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'users-folders-list-container',
   standalone: true,
-  imports: [CommonModule, FoldersListComponent, LetDirective, MatProgressBarModule, FoldersAddButtonComponent],
+  imports: [
+    FoldersListComponent,
+    LetDirective,
+    MatProgressBarModule,
+    FoldersAddButtonComponent,
+    NgSwitch,
+    NgSwitchCase,
+  ],
   templateUrl: './folders-list-container.component.html',
   styleUrls: ['./folders-list-container.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,

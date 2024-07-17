@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,7 +8,7 @@ import { FoldersAddButtonComponent } from '../folders-add-button/folders-add-but
 @Component({
   selector: 'users-folders-add-dialog',
   standalone: true,
-  imports: [CommonModule, MatDialogModule, MatInputModule, MatButtonModule, ReactiveFormsModule, FormsModule],
+  imports: [MatDialogModule, MatInputModule, MatButtonModule, ReactiveFormsModule, FormsModule],
   templateUrl: './folders-add-dialog.component.html',
   styleUrls: ['./folders-add-dialog.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,

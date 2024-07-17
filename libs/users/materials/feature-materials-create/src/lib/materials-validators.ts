@@ -1,5 +1,5 @@
 import { AbstractControl, ValidatorFn } from '@angular/forms';
-import { MaterialType, regex } from '@users/materials/data-access';
+import { MATERIALS_REGEX_CONSTANT, MaterialType } from '@users/materials/data-access';
 
 export class MaterialsValidators {
   // Expose validator as public static function
@@ -7,25 +7,25 @@ export class MaterialsValidators {
   // creates a validator function
   static ofType(type: string): ValidatorFn {
     // returns a function which takes an Anstract control as an input
-    return (control: AbstractControl): { [key: string]: any } | null => {
+    return (control: AbstractControl): { [key: string]: unknown } | null => {
       if (control.value) {
         switch (type) {
           case MaterialType.Audio:
-            if (!regex.audio.test(control.value)) {
+            if (!MATERIALS_REGEX_CONSTANT.audio.test(control.value)) {
               return {
                 invalidUrl: MaterialType.Audio,
               };
             }
             break;
           case MaterialType.Video:
-            if (!regex.video.test(control.value)) {
+            if (!MATERIALS_REGEX_CONSTANT.video.test(control.value)) {
               return {
                 invalidUrl: MaterialType.Video,
               };
             }
             break;
           case MaterialType.Pdf:
-            if (!regex.pdf.test(control.value)) {
+            if (!MATERIALS_REGEX_CONSTANT.pdf.test(control.value)) {
               return {
                 invalidUrl: MaterialType.Pdf,
               };

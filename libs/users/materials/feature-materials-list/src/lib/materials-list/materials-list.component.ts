@@ -8,7 +8,6 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { Material } from '@users/materials/data-access';
 import { MaterialsVM } from './materials-list.model';
@@ -18,11 +17,12 @@ import { MaterialsCardComponent } from '../materials-card/materials-card.compone
 import { MatDialog } from '@angular/material/dialog';
 import { MaterialsContentComponent } from '@users/materials/feature-materials-content';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'users-materials-list',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule, FoldersCardComponent, MaterialsCardComponent],
+  imports: [MatIconModule, MatButtonModule, FoldersCardComponent, MaterialsCardComponent, NgForOf],
   templateUrl: './materials-list.component.html',
   styleUrls: ['./materials-list.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,

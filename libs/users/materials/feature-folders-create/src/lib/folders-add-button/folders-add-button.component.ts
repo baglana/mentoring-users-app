@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, DestroyRef, inject, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -10,7 +9,7 @@ import { MaterialsFacade } from '@users/materials/data-access';
 @Component({
   selector: 'users-folders-add-button',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatButtonModule],
+  imports: [MatIconModule, MatButtonModule],
   templateUrl: './folders-add-button.component.html',
   styleUrls: ['./folders-add-button.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,

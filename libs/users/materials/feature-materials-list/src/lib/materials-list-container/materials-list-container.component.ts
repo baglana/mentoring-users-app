@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FoldersAddButtonComponent } from '@users/materials/feature-folders-create';
 import { FoldersListComponent } from '@users/materials/feature-folders-list';
 import { LetDirective } from '@ngrx/component';
@@ -8,18 +7,20 @@ import { Material, MaterialsFacade } from '@users/materials/data-access';
 import { Router } from '@angular/router';
 import { MaterialsListComponent } from '../materials-list/materials-list.component';
 import { MaterialsAddButtonComponent } from '@users/materials/feature-materials-create';
+import { NgSwitch, NgSwitchCase } from '@angular/common';
 
 @Component({
   selector: 'users-materials-list-container',
   standalone: true,
   imports: [
-    CommonModule,
     FoldersAddButtonComponent,
     FoldersListComponent,
     LetDirective,
     MatProgressBarModule,
     MaterialsListComponent,
     MaterialsAddButtonComponent,
+    NgSwitch,
+    NgSwitchCase,
   ],
   templateUrl: './materials-list-container.component.html',
   styleUrls: ['./materials-list-container.component.scss'],
